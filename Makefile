@@ -11,7 +11,7 @@ LDFLAGS	= -L/usr/local/lib -L/usr/lib/arm-linux-gnueabihf
 LDLIBS    = -lwiringPi -lwiringPiDev -lpthread -lm -lcrypt -lrt -lz -lmariadbclient -ldl
 
 
-SRC	=	rpis.c
+SRC	=	rpis.c rpis_all.c
 
 OBJ	=	$(SRC:.c=.o)
 
@@ -20,6 +20,10 @@ BINS	=	$(SRC:.c=)
 rpis:	rpis.o
 	$Q echo [link]
 	$Q $(CC) -o $@ rpis.o $(LDFLAGS) $(LDLIBS)
+
+rpis_all:	rpis_all.o
+	$Q echo [link]
+	$Q $(CC) -o $@ rpis_all.o $(LDFLAGS) $(LDLIBS)
 
 .c.o:
 	$Q echo [CC] $<
