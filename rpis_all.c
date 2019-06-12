@@ -2,7 +2,7 @@
 	THIS PROGRAM:
 		read temperature/humidity sensor with Raspberry Pi
 
-		Read two sensors; if data are good, write to a db
+		Read one sensor; if data are good, write to a db
 
 		wiringPi library and mysql connector/C used
 
